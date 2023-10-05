@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Eletric Car</string>
+    <string name="cars">Cars</string>
+    <string name="favorites">Favorites</string>
+    <string name="price">Price</string>
+    <string name="battery">Battery</string>
+    <string name="power">Power</string>
+    <string name="recharge">Recharge</string>
+    <string name="kw_price">kW Price (R$)</string>
+    <string name="km_traveled">km Traveled (km)</string>
+    <string name="calculate">CALCULATE</string>
+    <string name="screen1_name">Autonomy Calculator</string>
+    <string name="title_activity_autonomy_calculator">AutonomyCalculatorActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+</resources>

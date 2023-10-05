@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.AutonomyCalculateActivity">
+
+    <ImageView
+        android:id="@+id/iv_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_baseline_arrow_left"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <TextView
+        android:id="@+id/tv_tittle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/screen1_name"
+        style="@style/TextAppearance.MaterialComponents.Headline5"
+        android:layout_margin="16dp"
+        app:layout_constraintTop_toBottomOf="@id/iv_back"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/et_kwh_price"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/kw_price"
+        android:maxLength="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintTop_toBottomOf="@id/tv_tittle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="16dp"
+        android:layout_marginTop="64dp" />
+
+    <EditText
+        android:id="@+id/et_km_traveled"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/km_traveled"
+        android:maxLength="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintTop_toBottomOf="@id/et_kwh_price"
+        app:layout_constraintStart_toStartOf="@id/et_kwh_price"
+        app:layout_constraintEnd_toEndOf="@id/et_kwh_price"
+        android:layout_marginTop="8dp" />
+
+    <Button
+        android:id="@+id/b_calculate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/calculate"
+        android:textSize="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_km_traveled"
+        android:layout_margin="16dp"
+        android:layout_marginTop="64dp" />
+
+    <TextView
+        android:id="@+id/tv_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30dp"
+        app:layout_constraintStart_toStartOf="@+id/b_calculate"
+        app:layout_constraintTop_toBottomOf="@+id/b_calculate" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
