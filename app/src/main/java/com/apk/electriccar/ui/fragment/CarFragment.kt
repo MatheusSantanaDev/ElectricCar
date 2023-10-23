@@ -1,5 +1,6 @@
 package com.apk.electriccar.ui.fragment
 
+import android.content.ContentValues
 import android.content.Context
 import android.content.Intent
 import android.net.ConnectivityManager
@@ -23,6 +24,10 @@ import com.apk.electriccar.R.id.pb_loading
 import com.apk.electriccar.R.id.rv_cars_list
 import com.apk.electriccar.R.id.tv_no_wifi
 import com.apk.electriccar.data.CarsApi
+import com.apk.electriccar.data.local.CarDBHelper
+import com.apk.electriccar.data.local.CarRepository
+import com.apk.electriccar.data.local.ContractCar
+import com.apk.electriccar.data.local.ContractCar.CarEntry.TABLE_NAME
 import com.apk.electriccar.domain.Car
 import com.apk.electriccar.ui.AutonomyCalculateActivity
 import com.apk.electriccar.ui.adapter.CarAdapter
@@ -118,6 +123,10 @@ class CarFragment : Fragment() {
         val adapter = CarAdapter(carArray)
         carList.isVisible = true
         carList.adapter = adapter
+
+        adapter.carItemListener = {car ->
+          val toSave = CarRepository(requireContext()).save(car)
+        }
     }
 
     private fun setupListeners() {
@@ -145,5 +154,4 @@ class CarFragment : Fragment() {
             return networkInfo.isConnected
         }
     }
-
 }

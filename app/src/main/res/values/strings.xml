@@ -15,4 +15,6 @@
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="no_wifi">Ops... Check your internet connection.</string>
     <string name="response_error">Something went wrong, please try again later.</string>
+    <string name="saved_value">saved value\n</string>
+    <string name="error_data">Error when entering data.</string>
 </resources>

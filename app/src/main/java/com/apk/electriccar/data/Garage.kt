@@ -10,16 +10,8 @@ object Garage {
             battery = "200 kW",
             power = "600 cv",
             recharge = "110 min",
-            urlImage = "www.peganobreu.com"
-        ),
-
-        Car(
-            id = 2,
-            price = "R$ 100.000,00",
-            battery = "500 kW",
-            power = "300 cv",
-            recharge = "45 min",
             urlImage = "www.peganobreu.com",
+            isFavorite = false
         ),
 
     )

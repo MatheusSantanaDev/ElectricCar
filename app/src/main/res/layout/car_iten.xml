@@ -23,11 +23,23 @@
             android:layout_height="wrap_content">
 
             <ImageView
+                android:id="@+id/iv_favorite"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_margin="16dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/ic_baseline_star"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
                 android:id="@+id/iv_car"
                 android:layout_width="340dp"
-                android:layout_height="200dp"
+                android:layout_height="160dp"
                 android:layout_margin="16dp"
-                android:src="@drawable/mazda6"
+                android:src="@drawable/ic_honda"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

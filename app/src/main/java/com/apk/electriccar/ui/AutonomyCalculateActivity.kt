@@ -1,5 +1,7 @@
 package com.apk.electriccar.ui
 
+import android.content.Context
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -22,6 +24,12 @@ class AutonomyCalculateActivity : AppCompatActivity() {
         setContentView(activity_autonomy_calculate)
         setupView()
         setupListeners()
+        setupCachedCalc()
+    }
+
+    private fun setupCachedCalc(){
+        val calculatedValue = getSharedValue()
+        result.text = calculatedValue.toString()
     }
 
     private fun setupView() {
@@ -45,8 +53,22 @@ class AutonomyCalculateActivity : AppCompatActivity() {
     private fun calculate() {
         val price = price.text.toString().toFloat()
         val km = kmTraveled.text.toString().toFloat()
-        val count = price / km
+        val calc = price / km
 
-        result.text = count.toString()
+        result.text = calc.toString()
+        saveSharedValue(calc)
+    }
+
+    private fun saveSharedValue(result: Float){
+        val sharedPref = getPreferences(Context.MODE_PRIVATE) ?: return
+        with(sharedPref.edit()){
+            putFloat(getString(R.string.saved_value), result)
+            apply()
+        }
+    }
+
+    private fun getSharedValue(): Float{
+        val sharedPref = getPreferences(Context.MODE_PRIVATE)
+        return sharedPref.getFloat(getString(R.string.saved_value), 0.0f)
     }
 }
